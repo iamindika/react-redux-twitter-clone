@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./components/App";
 import { createStore } from "redux";
@@ -25,8 +26,10 @@ function ColorfulBorder() {
 
 ReactDOM.render(
   <Provider store={store}>
-    <ColorfulBorder />
-    <App />
+    <Router>
+      <ColorfulBorder />
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

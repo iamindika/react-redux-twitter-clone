@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { addAuthedUser } from "../actions/authedUser";
 import { handleInitializeData } from "../actions/shared";
 
+import NavBar from "./NavBar";
+import TweetList from "./TweetList";
+
 const defaultUser = "tylermcginnis";
 
 export default function App() {
@@ -15,5 +18,10 @@ export default function App() {
     dispatch(addAuthedUser(defaultUser));
     dispatch(handleInitializeData());
   }, [dispatch]);
-  return <div className="container">Redux Course Curriculum</div>;
+  return (
+    <div className="container">
+      <NavBar />
+      <TweetList />
+    </div>
+  );
 }
